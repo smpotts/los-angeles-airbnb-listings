@@ -1,1 +1,1 @@
-create database airbnb;
+CREATE DATABASE airbnb;

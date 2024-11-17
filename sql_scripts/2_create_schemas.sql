@@ -1,3 +1,3 @@
-create schema listings_staging;
+CREATE SCHEMA listings_staging;
 
-create schema listings;
+CREATE SCHEMA listings;
