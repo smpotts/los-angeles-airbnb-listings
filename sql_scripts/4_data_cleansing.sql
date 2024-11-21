@@ -39,4 +39,8 @@ ALTER TABLE staging.listings_cleaned
 -- changing the data type of the host response rate
 ALTER TABLE staging.listings_cleaned 
 	ALTER COLUMN host_response_rate SET DATA TYPE DECIMAL(3,2) USING host_response_rate::numeric(3,2);
-	
+
+-- remove host since dates that are junk
+UPDATE staging.listings_cleaned
+SET host_since = NULL
+WHERE host_since > CURRENT_DATE;

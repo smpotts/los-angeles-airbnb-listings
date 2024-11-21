@@ -10,33 +10,26 @@ erDiagram
         created_at timestamp
         updated_at timestamp
   }
-  HOST ||--o{ PROPERTY : has_many
-  PROPERTY {
-        property_id bigserial PK
+  HOST ||--o{ PROPERTY_LISTING : has_many
+  PROPERTY_LISTING {
+        property_id bigint PK
         host_id bigint FK
+        listing_name varchar(256)
         property_type varchar(64)
         room_type varchar(32)
-        accommodates integer
-        bathrooms integer
-        beds integer
+        license varchar(128)
         neighborhood varchar(64)
         neighborhood_group varchar(64)
         latitude decimal
         longitude decimal
-        created_at timestamp
-        updated_at timestamp
-  }
-  PROPERTY ||--|| LISTING : has_one
-  LISTING {
-        listing_id bigint PK
-        property_id bigserial FK
-        listing_name varchar(64)
+        accommodates integer
+        bathrooms integer
+        beds integer
         price integer
         minimum_nights integer
         availability_365 integer
         number_of_reviews integer
         review_scores_rating decimal
-        license varchar(64)
         created_at timestamp
         updated_at timestamp
   }
